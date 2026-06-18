@@ -200,13 +200,23 @@ include 'header.php';
             justify-content: center;
             margin-bottom: 20px;
         }
+
+        .promo-post {
+            max-width: 1000px !important;
+            width: calc(100% - 60px) !important;
+        }
+        @media screen and (max-width: 796px) {
+            .promo-post {
+                width: calc(100% - 30px) !important;
+            }
+        }
     </style>
 
     <main class="container">
         <h2 class="main-headline">Geleneksel sanatlar modern tiyatroyla buluşuyor</h2>
 
-        <div class="gallery-container" style="margin-bottom: 40px;">
-            <article class="gallery-post" style="margin: 0 auto; cursor: pointer; height: auto;">
+        <div class="gallery-container" style="margin-bottom: 20px; padding: 0;">
+            <article class="gallery-post promo-post" style="margin: 0 auto; cursor: pointer; height: auto;">
                 <img src="images/tanitim.png" alt="Özcan Haliloğlu Tanıtım" class="gallery-image" style="border-bottom: none; height: auto; width: 100%; object-fit: contain;">
             </article>
         </div>
