@@ -18,6 +18,21 @@ include 'header.php';
 
             <h3 class="calendar-subtitle">Gelecek Etkinlikler</h3>
             <div class="event-list">
+                
+
+            </div>
+
+            <h3 class="calendar-subtitle">Geçmiş Etkinlikler</h3>
+            <div class="event-list">
+                <div class="event-item">
+                    <div class="event-date">
+                        18 HAZİRAN<br>2026
+                    </div>
+                    <div class="event-details">
+                        <h4>Hayal Postacısı: Gönülden Perdeye</h4>
+                        <div class="event-location">İstasyon İlkokulu, Kocaeli</div>
+                    </div>
+                </div>
                 <div class="event-item">
                     <div class="event-date">
                         25 MART<br>2026
@@ -27,11 +42,6 @@ include 'header.php';
                         <div class="event-location">Leven Kırca Oya Başar İlkokulu, Kocaeli</div>
                     </div>
                 </div>
-
-            </div>
-
-            <h3 class="calendar-subtitle">Geçmiş Etkinlikler</h3>
-            <div class="event-list">
                 <div class="event-item">
                     <div class="event-date">
                         20 ŞUBAT<br>2026
