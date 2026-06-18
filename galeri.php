@@ -36,16 +36,40 @@ include 'header.php';
     <main class="container">
         <h2 class="main-headline">Performanslardan Kareler</h2>
         <div class="gallery-container">
-            <?php for($i=1; $i<=20; $i++): 
-                $desc = "Özcan Haliloğlu Performans";
-                if($i == 13) $desc = "Payitaht Abdülhamit";
-                if($i == 14 || $i == 16) $desc = "Hayal Postacısı";
-                if($i == 15) $desc = "Çocuklarla buluşma";
-                if($i == 12) $desc = "Yetişkinlerle buluşma";
-                if($i == 17) $desc = "Final selamlaması";
+            <?php 
+            $descriptions = [
+                12 => "Yetişkinlerle buluşma",
+                13 => "Payitaht Abdülhamit",
+                14 => "Hayal Postacısı",
+                15 => "Çocuklarla buluşma",
+                16 => "Hayal Postacısı",
+                17 => "Final selamlaması",
+                
+                // Add descriptions for new posts here:
+                21 => "Payitaht Abdülhamit dizisinden bir kare",
+                22 => "Özcan Haliloğlu",
+                23 => "Payitaht Abdülhamit dizisinden bir kare",
+                24 => "Özcan Haliloğlu",
+                25 => "Mehmed Fetihler Sultanı dizisinden bir kare",
+                26 => "Mehmed Fetihler Sultanı dizisinden bir kare",
+                27 => "Mehmed Fetihler Sultanı dizisinden bir kare",
+                28 => "Mehmed Fetihler Sultanı dizisinden bir kare",
+                29 => "Yüz Yüze dizisinden bir kare",
+            ];
+
+            for($i=29; $i>=1; $i--): 
+                $desc = isset($descriptions[$i]) ? $descriptions[$i] : "Özcan Haliloğlu Performans";
+
+                // Check for the correct image extension dynamically
+                $ext = 'jpeg';
+                if (file_exists(__DIR__ . "/images/galeri/gal-(" . $i . ").jpg")) {
+                    $ext = 'jpg';
+                } elseif (file_exists(__DIR__ . "/images/galeri/gal-(" . $i . ").png")) {
+                    $ext = 'png';
+                }
             ?>
             <article class="gallery-post">
-                <img src="images/galeri/gal-(<?php echo $i; ?>).jpeg" alt="Galeri Görseli <?php echo $i; ?>" class="gallery-image">
+                <img src="images/galeri/gal-(<?php echo $i; ?>).<?php echo $ext; ?>" alt="Galeri Görseli <?php echo $i; ?>" class="gallery-image">
                 <div class="gallery-description">
                     <p><?php echo $desc; ?>.</p>
                 </div>

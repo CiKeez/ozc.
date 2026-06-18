@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 require_once 'db_config.php'; 
 $pageTitle = "Özcan Haliloğlu | Tiyatro Sanatçısı";
 $pageDescription = "Özcan Haliloğlu - Tiyatro Sanatçısı, Meddah ve Hayal Postacısı";
@@ -204,16 +204,20 @@ include 'header.php';
 
     <main class="container">
         <h2 class="main-headline">Geleneksel sanatlar modern tiyatroyla buluşuyor</h2>
+
+        <div class="gallery-container" style="margin-bottom: 40px;">
+            <article class="gallery-post" style="margin: 0 auto; cursor: pointer;">
+                <img src="images/tanitim.png" alt="Özcan Haliloğlu Tanıtım" class="gallery-image" style="border-bottom: none;">
+            </article>
+        </div>
+
         <section class="biography-section">
             <article class="content">
                 <h2 class="section-title">Hakkımda</h2>
                 <img class="foto" src="images/takimfoto.png" alt="Özcan Haliloğlu Fotoğrafı">
-                <p class="text">Ben Özcan Haliloğlu. Tiyatro sanatçısı, meddah ve Hayal Postacısı olarak; geleneksel
-                    anlatı
-                    sanatlarını çağdaş sahne diliyle buluşturuyor, hem çocuklar hem de yetişkinler için hikâye temelli
-                    tiyatro oyunları sahneliyorum. Yıllar boyunca farklı sahnelerde, farklı izleyicilerle kurduğum
-                    etkileşimler sayesinde şunu çok daha iyi anladım: Hikâyeler sadece anlatılmaz, aynı zamanda
-                    yaşanır...
+                <p class="text">Ben Özcan Haliloğlu. Tiyatro sanatçısı, meddah ve aktörüm.
+​"Hayal Postacısı" olarak geleneksel anlatı sanatını modern sahneyle buluşturuyor; hem çocuklar hem de yetişkinler için kalplere dokunan hikâyeler sahneliyorum. Sahnede kelimelerin ve duyguların gücüne inanıyor, her oyunda izleyicimle zamansız bir köprü kurmayı hedefliyorum.
+​Tiyatro sahnelerinin yanı sıra televizyon dizileri, reklam projeleri ve kamera önünde de profesyonel oyunculuk kariyerimi tutkuyla sürdürüyorum.
                 </p>
                 <div style="clear: both; text-align: center; margin-top: 20px;">
                     <a href="hakkimda.php" class="read-more">Daha Fazla Bilgi</a>
@@ -318,5 +322,47 @@ include 'header.php';
             <p class="no-comments">Henüz yorum yapılmamış. İlk yorumu siz yapın!</p>
         <?php endif; ?>
     </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.querySelector('.close-lightbox');
+            const galleryImages = document.querySelectorAll('.gallery-image');
+
+            galleryImages.forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', () => {
+                    lightbox.style.display = 'flex';
+                    lightboxImg.src = img.src;
+                });
+            });
+
+            const closeLightbox = () => {
+                lightbox.style.display = 'none';
+                lightboxImg.src = '';
+            };
+
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // ESC key to close
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
 
     <?php include 'footer.php'; ?>
