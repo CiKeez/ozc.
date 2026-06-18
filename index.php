@@ -206,8 +206,8 @@ include 'header.php';
         <h2 class="main-headline">Geleneksel sanatlar modern tiyatroyla buluşuyor</h2>
 
         <div class="gallery-container" style="margin-bottom: 40px;">
-            <article class="gallery-post" style="margin: 0 auto; cursor: pointer;">
-                <img src="images/tanitim.png" alt="Özcan Haliloğlu Tanıtım" class="gallery-image" style="border-bottom: none;">
+            <article class="gallery-post" style="margin: 0 auto; cursor: pointer; height: auto;">
+                <img src="images/tanitim.png" alt="Özcan Haliloğlu Tanıtım" class="gallery-image" style="border-bottom: none; height: auto; width: 100%; object-fit: contain;">
             </article>
         </div>
 
