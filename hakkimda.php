@@ -43,7 +43,7 @@ include 'header.php';
                 hikâyeler büyüdükçe dinleyicilerle kurduğum bağ derinleşir. Ve biliyorum ki yol ne kadar uzun olursa
                 olsun, anlatacak daha nice hikâyem, çıkacağım daha çok sahne, buluşacağım daha çok kalp var. Çünkü
                 hikâyeler yalnızca geçmişimizi değil, geleceğe dair umudumuzu da taşır. Ve ben bu umudu her sahneye, her
-                kelimeye, her nefese taşımaya devam edeceğim…</p>
+                kelimeye, her nefese taşımaya devam edeceğim.</p>
         </article>
 
         <section class="single-preview-container">
